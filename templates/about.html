@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<html>
+    <head><title>ABOUT US</title></head>
+    <body>
+        <center>
+            <br>
+            <div style="background-color: white;width:420px;height:100px;border-radius: 8px;">
+                <div style="font-weight: bold;font-size: 50px;">
+                    SHOPFEST
+                </div>
+                <div style="font-size: 20px; font-family:cambria; background-color:rgb(3, 63, 43); width:400px;color:white;border-radius: 6px;">
+                    ~perfect place for your festive needs~
+                </div>
+            </div>
+            <h1>ABOUT US:</h1>
+            
+            <h2 style="font-family:cambria;color:rgb(11, 105, 74)">
+                Shopfest delivered its first package in august 2021.<br>
+                Ganesh Chaturthi, Diwali and Christmas happen to be <br>
+                the three most widely celebrated festivals in India.<br>
+                Our mission is to help you find all items you need <br>
+                during these festivals in one place.
+            </h2>
+            <br>
+            <h3 style="font-family:cambria;color:rgb(11, 105, 74)">~ shopfest2021@gmail.com </h3>
+        </center>
+
+        <img src="{% static 'iglogo.jpg' %}" height="50px" width="50px" style="border-radius: 12px;position:absolute;top: 500px;left:80px;z-index:4">
+        <div style="position: absolute;top: 510px;left: 150px;z-index: 4;font-size: 20px;"><b>~ @SHOP.FEST</b></div>
+
+        <img src="{% static 'fblogo.png' %}" height="50px" width="50px" style="border-radius: 12px;position:absolute;top: 500px;right:250px;z-index:4">
+        <div style="position: absolute;top: 510px;right: 110px;z-index: 4;font-size: 20px;"><b>~ SHOPFEST</b></div>
+
+    </body>
+</html>
+{% endblock %}

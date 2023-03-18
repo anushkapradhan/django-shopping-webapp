@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static%}
+{% block content %}
+<head>
+    <title>ORDERS</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styling.css' %}">
+<style>
+    .back-class {
+        background-color: aliceblue;
+        margin: 0 auto;
+        margin-top: 50px;
+        padding: 20px;
+    }
+
+    h3 {
+        color: rgb(11, 105, 74);
+    }
+    .flex-container {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        grid-gap: 10px;
+        background-color: transparent;
+        padding: 10px;
+   }
+</style>
+</head>
+<center>
+    <h1 style="background-color: white;">Your Orders:</h1>
+</center>
+
+    <div style="float:center;margin: 60px;">
+{% for order,product in con %}
+<div class="back-class" style="width: 20rem;">
+    <img class="" src="{{ product.image.url }}" style="width:100%">
+    <h3>PRODUCT : {{ product.productName}} </h3>
+    <h3>PRICE : Rs. {{ product.price}} /-</h3>
+    <h3>DATE : {{ order.date }}</h3>
+</div>
+</div>
+{% endfor %}
+</div>
+<center>
+    <a href="http://127.0.0.1:8000/category" style="color: white; width:200px; background-color:rgb(3, 63, 43)">
+        CONTINUE SHOPPING
+    </a>
+</center>
+
+{% endblock %}
+

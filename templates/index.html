@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+    <head><title>SHOPFEST</title>
+        <style media="screen">
+        
+        </style>
+    </head>
+        
+<body >
+        <center>
+            <div style="background-color: white;width:450px;height:120px;border-radius: 8px;">
+                <div style="font-size: 70px;">
+                    SHOPFEST
+                </div>
+                <div style="font-size: 20px; font-family:cambria; background-color:rgb(3, 63, 43); width:400px;color:white;border-radius: 6px;">
+                    ~perfect place for your festive needs~
+                </div>
+            </div>
+
+            <h2 style="font-family:cambria;color:rgb(11, 105, 74)">
+            <pre>
+GANESH CHATURTHI | CHRISTMAS | DIWALI
+We have got it covered!
+Please sign up/login to continue shopping...
+            </pre>
+            </h2>
+
+            <img src="{% static 'ganpati.jpg' %}" width="300" height="200" style="position: absolute;top: 170px;left: 50px;z-index: 1">
+            <img src="{% static 'diwali.jpg' %}" width="300" height="200" style="position: absolute;top: 170px;right: 50px;z-index: 2">
+            <img src="{% static 'christmas.jpg' %}" width="300" height="200" style="position: absolute;top: 350px;left: 500px;z-index: 3">
+            
+            
+        </center>
+
+        <img src="{% static 'iglogo.jpg' %}" height="50px" width="50px" style="border-radius: 12px;position:absolute;top: 500px;left:80px;z-index:4">
+        <div style="position: absolute;top: 510px;left: 150px;z-index: 4;font-size: 20px;"><b>~ @SHOP.FEST</b></div>
+
+        <img src="{% static 'fblogo.png' %}" height="50px" width="50px" style="border-radius: 12px;position:absolute;top: 500px;right:250px;z-index:4">
+        <div style="position: absolute;top: 510px;right: 110px;z-index: 4;font-size: 20px;"><b>~ SHOPFEST</b></div>
+
+
+</body>
+{% endblock %}

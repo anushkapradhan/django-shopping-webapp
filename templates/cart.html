@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<head><title>CART</title>
+    <style media="screen">
+        .card {
+            width: 20%;
+            background-color: white;
+            margin: 3%;
+            border: transparent;
+        }
+        .card-txt {
+            text-align: center;
+            padding: 10px;
+        }
+        .flex-container {
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            grid-gap: 10px;
+            background-color: transparent;
+            padding: 10px;
+       }
+       .back-class {
+        background-color: aliceblue;
+        margin: 0 auto;
+        margin-top: 50px;
+        padding: 20px;
+    }
+    h3 {
+        color: rgb(11, 105, 74);
+    }
+      
+      </style>
+</head>
+<center>
+<h1 style="background-color: white;">Your Cart</h1>
+</center>
+    <div style="float:center;margin: 60px;">
+    {% for cart,product in con %}
+    <div>
+        <form action="order/{{product.id}}" method="POST">
+            {% csrf_token %}
+        <div class="card back-class" style="width: 20rem;">
+            <img class="" src="{{ product.image.url }}" style="width:100%">
+            <h3>  PRODUCT = {{ product.productName}}</h3>
+            <h3>  PRICE = {{ product.price}}</h3>
+            <h3>  DATE = {{ cart.added_date }}</h3>
+            <center><a href="">
+                <input class="" type = 'Submit' name='submit' value='ORDER' style="width: 200px;background:transparent;border:transparent">
+            </a>
+            </center>
+        </form><br>
+        <center>
+            <a href="remove/{{ product.id }}">
+                <button type="button" class="" style="width: 200px; background:transparent;border:transparent">
+                    REMOVE FROM CART
+                </button>
+            </a>
+        </center><br>
+    </div>
+    
+    {% endfor %}
+</div>
+<br>
+<center>
+    <a href="http://127.0.0.1:8000/category" style="color: white; width:200px; background-color:rgb(3, 63, 43)">
+        CONTINUE SHOPPING
+    </a>
+</center>
+
+{% endblock %}

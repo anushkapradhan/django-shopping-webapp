@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<head><title>CATEGORY</title>
+    <style media="screen">
+        .title-bg{
+            background-color:rgb(246, 250, 249);
+        }
+        .card {
+            width: 50%;
+            background-color: white;
+            margin: 3%;
+            border: 1px solid;
+        }
+        .card-txt {
+            text-align: center;
+            padding: 10px;
+        }
+        .flex-container {
+             display: flex;
+        }
+        .flex-child {
+            flex: 1;
+            border: 2px solid yellow;
+        }  
+        .flex-child:first-child {
+            margin-right: 20px;
+        }
+
+        .container {
+            position: relative;
+            width: 50%;
+        }
+        .image {
+            opacity: 1;
+            display: block;
+            width: 100%;
+            height: auto;
+            transition: .5s ease;
+            backface-visibility: hidden;
+        }
+        .middle {
+            transition: .5s ease;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        .container:hover .image {
+            opacity: 0.3;
+        }
+        .container:hover .middle {
+            opacity: 1;
+        }
+        .text {
+            background-color: #1ee29a;
+            color: white;
+            font-size: 20px;
+            padding: 16px 32px;
+        }
+        </style>
+    </head>
+    
+    <!-- <div style="background-image: url({% static 'bg.jpg' %});"> -->
+        
+        <body>
+            
+        <center>
+            <h1 class="title-bg">Welcome, {{user.username}}! What are you looking for?</h1></center>
+    
+    <div class="flex-container">
+
+    <div class="card container">
+        <a href="http://127.0.0.1:8000/ganpatiFest" >
+        <img src="{% static 'ganpatifest.jpg' %}" alt="Ganpati img" width="100%" class="image">
+        <div class="middle">
+            <div class="text">Shop for GANESH CHATURTHI</div>
+        </div></a>
+        <div class="card-txt">
+            <p><h2> Ganpati items </h2></p>
+        </div>
+    </div>
+
+    <div class="card container">
+        <a href="http://127.0.0.1:8000/diwaliFest" >
+        <img src="{% static 'diwalifest.jpg' %}" alt="Diwali img" width="100%" class="image">
+        <div class="middle">
+            <div class="text">Shop for DIWALI</div>
+        </div></a>
+        <div class="card-txt">
+            <p><h2>Diwali items</h2></p>
+        </div>
+    </div>
+
+    <div class="card container">
+        <a href="http://127.0.0.1:8000/christmasFest" >
+        <img src="{% static 'christmasfest.jpg' %}" alt="Chirstmas img" width="100%" class="image">
+        <div class="middle">
+            <div class="text">Shop for CHRISTMAS</div>
+        </div></a>
+        <div class="card-txt">
+            <p><h2>Christmas items</h2></p>
+        </div>
+    </div>
+    
+    </div>
+    
+    </div>
+
+</body>
+{% endblock %}

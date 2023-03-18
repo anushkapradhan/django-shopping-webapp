@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOPFEST</title>
+</head>
+<style>
+    a:link, a:visited {
+        background-color: rgb(10, 218, 148);
+        color: white;
+        padding: 14px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        margin: 10px;border-radius: 8px;
+    }
+    a:hover, a:active {
+        background-color: rgb(0, 133, 88);
+        margin: 10px;border-radius: 8px;
+    }
+</style>
+<body style="background-color: aquamarine;">
+    <div style="background-color:rgb(3, 63, 43);border-radius: 8px;">
+        <div>
+            <ul style="display: flex;list-style: none;">
+                <li><a href="http://127.0.0.1:8000/" style="margin: 10px;border-radius: 8px;">HOME</a></li>
+                <li><a href="http://127.0.0.1:8000/about" style="margin: 10px;border-radius: 8px;">ABOUT US</a></li>
+                
+                <div style="float: right;display: flex;">
+                    {% if user.is_authenticated %}
+                    <li style="padding-left: 80px;"><h2 style="color: white;">SHOPFEST</h2></li>
+                    <li style="padding-left: 100px;"><a href="http://127.0.0.1:8000/category" style="margin: 10px;border-radius: 8px;" >CATEGORY</a></li>
+                    <li><a href="http://127.0.0.1:8000/cart" style="margin: 10px;border-radius: 8px;" >MY CART</a></li>
+                    <li><a href="http://127.0.0.1:8000/order" style="margin: 10px;border-radius: 8px;" >MY ORDERS</a></li>
+                    <li><a href="http://127.0.0.1:8000/logout" style="margin: 10px;border-radius: 8px;" >LOGOUT</a></li>
+                    {% else %}
+                    <li style="padding-left: 660px;"><a href="http://127.0.0.1:8000/signup" style="margin: 10px;border-radius: 8px;" >SIGN UP</a></li>
+                    <li><a href="http://127.0.0.1:8000/login" style="margin: 10px;border-radius: 8px;">LOGIN</a></li>
+                    {% endif %}
+                </div>
+            </ul>
+        </div>
+    </div>
+{% block content %}
+
+{% endblock %}
+</body>
+</html>
